@@ -1,0 +1,21 @@
+server:
+  port: 8090
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  redis:
+    host: 39.105.92.39
+  rabbitmq:
+    host: 175.24.46.5
+    username: jsjs
+    password: jsjs
+    virtual-host: /jsonwu
+cart:
+  jwt:
+    pubKeyPath: F:\\0826allProject\\Ecommerce\\gmall-0826\\secret\\rsa.pub #公钥
+    cookieName: GMALL_TOKEN  #cookie名称
+    userKeyName: user-key   # 未登录的用户标识，游客id
+    expireTiem:  43200   #过期时间  一个月
+

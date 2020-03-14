@@ -1,0 +1,26 @@
+package com.atguigu.gmall.pms.service;
+
+import com.atguigu.gmall.pms.entity.AttrEntity;
+import com.atguigu.gmall.pms.vo.AttrVO;
+import com.baomidou.mybatisplus.extension.service.IService;
+import com.atguigu.core.bean.PageVo;
+import com.atguigu.core.bean.QueryCondition;
+
+
+/**
+ * 商品属性
+ *
+ * @author jsonwu
+ * @email jsonwu@atguigu.com
+ * @date 2020-02-18 17:27:03
+ */
+public interface AttrService extends IService<AttrEntity> {
+
+    PageVo queryPage(QueryCondition params);
+
+     //规格参数的属性查询
+    PageVo queryByCidTypePage(QueryCondition condition, Long cid, Integer type);
+
+    void saveAttrVO(AttrVO attrVO);
+}
+

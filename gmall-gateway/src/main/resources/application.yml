@@ -1,0 +1,80 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      routes:
+        - id: pms-route # 商品管理路由
+          uri: lb://pms-service
+          predicates:
+            - Path=/pms/**
+          filters:
+            #- Auth
+
+        - id: oms-route # 订单管理路由
+          uri: lb://oms-service
+          predicates:
+            - Path=/oms/**
+        - id: ums-route # 用户管理路由
+          uri: lb://ums-service
+          predicates:
+            - Path=/ums/**
+        - id: wms-route # 仓库管理路由
+          uri: lb://wms-service
+          predicates:
+            - Path=/wms/**
+        - id: sms-route # 营销管理路由
+          uri: lb://sms-service
+          predicates:
+            - Path=/sms/**
+
+        - id: index-route # index（门面）管理路由
+          uri: lb://index-service
+          predicates:
+            - Path=/api/index/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*), $\{segment}
+
+        - id: item-route #  item 管理路由
+          uri: lb://item-service
+          predicates:
+            - Path=/api/item/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*), $\{segment}
+
+        - id: auth-route #   auth授权中心
+          uri: lb://auth-service #auth-service
+          predicates:
+            - Path=/auth/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*), $\{segment}
+
+        - id: cart-route #   cart
+          uri: lb://cart-service #auth-service
+          predicates:
+            - Path=/cart/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*), $\{segment}
+
+        - id: order-service # 订单服务
+          uri: lb://order-service
+          predicates:
+            - Path=/order/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /$\{segment}
+            - Auth
+
+auth:
+  jwt:
+    pubKeyPath: F:\\0826allProject\\Ecommerce\\gmall-0826\\secret\\rsa.pub #公钥
+    cookieName: GMALL_TOKEN  #cookie名称
+
+ribbon:
+  ConnectTimeout: 12000
+  ReadTimeout: 8000
+
+
+
+
+

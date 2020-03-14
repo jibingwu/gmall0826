@@ -1,0 +1,18 @@
+#端口号
+server:
+  port: 8087
+  #注册中心
+ribbon:
+  ConnectTimeout: 12000
+  ReadTimeout: 8000
+
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  redis:
+    host: 39.105.92.39
+logging:
+  level： com.atguigu.gmall: debug

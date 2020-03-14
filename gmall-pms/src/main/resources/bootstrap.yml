@@ -1,0 +1,14 @@
+spring:
+  application:
+    #应用名
+    name: pms-service
+    #nacos配置中心
+  cloud:
+    nacos:
+      config:
+        #nacos做配置中心的IP地址
+        server-addr: 127.0.0.1:8848
+        namespace: 2bd64fea-e3a2-4d61-9500-43607e5bd884
+        group: dev
+        #默认找服务名.properties文件 开启默认格式
+        file-extension: yml

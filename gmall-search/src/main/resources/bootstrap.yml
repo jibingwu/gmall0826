@@ -1,0 +1,10 @@
+#配置中心
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+#应用名称
+  application:
+    name: search-service
+

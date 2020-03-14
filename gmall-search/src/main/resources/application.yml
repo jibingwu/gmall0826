@@ -1,0 +1,21 @@
+#端口号
+server:
+  port: 8086
+#nacos注册中心
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  rabbitmq:
+    host: 175.24.46.5
+    username: jsjs
+    password: jsjs
+    virtual-host: /jsonwu
+
+#es配置
+  elasticsearch:
+    rest:
+      uris: http://175.24.46.5:9200
+  jackson:
+    default-property-inclusion: non_null

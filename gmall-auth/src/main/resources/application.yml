@@ -1,0 +1,25 @@
+server:
+  port: 8089
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+logging:
+  level： com.atguigu.gmall: debug
+
+auth:
+  jwt:
+    priKeyPath:  F:\\0826allProject\\Ecommerce\\gmall-0826\\secret\\rsa.pri
+    pubKeyPath:  F:\\0826allProject\\Ecommerce\\gmall-0826\\secret\\rsa.pub
+    secret: sdfdsjlkerew003834DJSLDJ&#($*234sljfl  #秘钥
+    expire: 180 #过期时间分钟
+    cookieName: GMALL_TOKEN
+  ribbon:
+    ReadTimeout: 30000
+    ConnectTimeout: 30000
+
+
+
+
+
