@@ -22,12 +22,10 @@ import java.util.UUID;
 @RestController
 @RequestMapping("auth")
 public class AuthController {
-
-    @Autowired
+    @Autowired  //测试用下我的
     private AuthService authService;
-
     @Autowired
-    private JwtProperties jwtProperties;
+    private JwtProperties jwtProperties; //1
 
     @PostMapping("accredit")
     public Resp<Object> accreditAction(@RequestParam("username") String userName, @RequestParam("password") String password, HttpServletRequest request, HttpServletResponse response) throws InterruptedException {
@@ -48,6 +46,7 @@ public class AuthController {
 
         String cookieValue = CookieUtils.getCookieValue(request,this.jwtProperties.getCookieName());
         System.out.println("cookieValue = " + cookieValue);
+
 
    /*     Cookie[] cookies = request.getCookies();
         for (Cookie cookie : cookies) {
