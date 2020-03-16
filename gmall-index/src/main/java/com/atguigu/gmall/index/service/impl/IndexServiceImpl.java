@@ -41,7 +41,6 @@ public class IndexServiceImpl implements IndexService {
 
 
 
-
     @Override
     @GmallCache(prefix = "index:cates:", timeout = 14400, random = 3600, lock = "lock")
     public List<CategoryVO> queryLv2WithSubByPid(Long pid) {
@@ -50,9 +49,6 @@ public class IndexServiceImpl implements IndexService {
         List<CategoryVO> categoryVOS = listResp.getData();
         return categoryVOS;
     }
-
-
-
 
 
 

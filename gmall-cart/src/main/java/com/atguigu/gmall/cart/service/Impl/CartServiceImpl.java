@@ -48,6 +48,7 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public void addCart(Cart cart) {
+        //判断登入状体，获取到key
         String key = this.generatedKeyStatus();
         //获取用户操作购物对象，也就是从redis设置对象
         BoundHashOperations<String, Object, Object> hashOps = this.redisTemplate.boundHashOps(key);

@@ -24,7 +24,7 @@ public class JwtProperties {
     private String cookieName; //cookiesName=名称
 
     private PublicKey publicKey; //公钥对象
-    private PrivateKey privateKey;//私钥对象
+    private PrivateKey privateKey;//私钥对象     PrivateKey
 
     /**
      *  加载到这个类就执行

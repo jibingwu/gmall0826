@@ -22,10 +22,8 @@ import java.util.UUID;
 @RestController
 @RequestMapping("auth")
 public class AuthController {
-
     @Autowired
     private AuthService authService;
-
     @Autowired
     private JwtProperties jwtProperties;
 
@@ -48,6 +46,7 @@ public class AuthController {
 
         String cookieValue = CookieUtils.getCookieValue(request,this.jwtProperties.getCookieName());
         System.out.println("cookieValue = " + cookieValue);
+
 
    /*     Cookie[] cookies = request.getCookies();
         for (Cookie cookie : cookies) {

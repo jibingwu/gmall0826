@@ -19,9 +19,6 @@ import java.util.Map;
 @RestController
 @RequestMapping("pms/oss")
 public class PmsOssController {
-    //LTAI4FmjNCEss2fBJFZsd6MC
-    //UIIAkTpIUByOWULwB46bWLHMKYqL2p
-    //LTAI4FeyqaxWq3Xn8Enh5GXh
     String accessId = "LTAI4FeyqaxWq3Xn8Enh5GXh"; // 请填写您的AccessKeyId。
     String accessKey = "1EA8xfcbWlmkmmGwdVY9KN33ZGYepN"; // 请填写您的AccessKeySecret。
     //oss-cn-shanghai.aliyuncs.com
