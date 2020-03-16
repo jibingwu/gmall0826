@@ -22,7 +22,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("auth")
 public class AuthController {
-    @Autowired
+    @Autowired  //测试用下我的
     private AuthService authService;
     @Autowired
     private JwtProperties jwtProperties;
